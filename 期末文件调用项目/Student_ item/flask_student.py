@@ -161,9 +161,12 @@ def show():
 
 
 # 添加基本的错误处理和日志记录。
-import logging
+# import logging
+# logging.basicConfig(filename='app.log', level=logging.INFO)
+#一般没有上线项目可以不要日志
 
-logging.basicConfig(filename='app.log', level=logging.INFO)
+
+
 @app.errorhandler(404)
 def page_not_found(e):
     logging.error(f"404错误：{e}")
