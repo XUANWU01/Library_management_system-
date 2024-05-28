@@ -1,0 +1,79 @@
+ /* 基础样式 */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* container-fluid样式 */
+        .container-fluid {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            /* 确保padding不会增加容器的宽度 */
+        }
+
+        /* row-fluid样式 */
+        .row-fluid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            /* 水平方向上均匀分布子元素 */
+        }
+
+        /* spanX样式 */
+        .span4 {
+            flex: 0 0 32%;
+            /* 假设我们有3个span4，每个占33.33%的宽度，但由于间隔，我们使用32% */
+            max-width: 32%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .span12 {
+            flex: 0 0 100%;
+            max-width: 100%;
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        /* 表单样式 */
+        .form-search {
+            display: flex;
+            align-items: center;
+            /* 垂直居中 */
+        }
+
+        .input-medium {
+            width: 200px;
+            /* 假设你希望输入框的宽度为200px */
+            padding: 5px;
+        }
+
+        .btn {
+            margin-left: 10px;
+            /* 与输入框之间的间隔 */
+            padding: 5px 10px;
+            background-color: #4CAF50;
+            /* 绿色背景 */
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #2970f3;
+            /* 鼠标悬停时的背景色 */
+        }
+
+        /* 标题样式 */
+        .text-center {
+            text-align: center;
+        }
+
+        h1 {
+            color: rgb(255, 0, 240);
+            /* 标题颜色 */
+            margin-bottom: 20px;
+            /* 与下方内容的间隔 */
+        }
