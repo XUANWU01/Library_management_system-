@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="CSS/01.css">
+    <script src="Student_%20item/static/JavaScript/jquery-3.6.0.js" async defer></script>
+</head>
+
+<body>
+    <div class="logo">
+        <!-- 图片示例 -->
+        <img src="picture/图片1.png" alt="logo">
+    </div>
+
+    <div class="login-container">
+        <form id="loginForm" method="POST">
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="studentNumber" aria-label="请输入学号">学&nbsp;号:</label>
+                    <input type="text" id="studentNumber" name="studentNumber" required pattern="[0-9]{5,10}">
+                </div>
+                <div class="form-group">
+                    <label for="name" aria-label="请输入姓名">姓&nbsp;名:</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="password" aria-label="请输入密码">密&nbsp;码:</label>
+                    <input type="password" id="password" name="password" required oninput="checkPasswordStrength()">
+                    <span id="passwordStrength" class="password-strength"></span>
+                </div>
+                <input type="submit" value="登录" id="loginSubmit">
+            </div>
+        </form>
+    </div>
+
+    <div class="footer">
+        版权所有 &copy; 2023 第五组
+    </div>
+
+    <script>
+        // 密码强度检测函数
+        function checkPasswordStrength() {
+            const password = document.getElementById('password');
+            const strengthMessage = document.getElementById('passwordStrength');
+            let strength = 0;
+
+            // 简单的密码强度规则
+            if (password.value.length >= 8) strength++;
+            if (/[a-z]/.test(password.value)) strength++;
+            if (/[A-Z]/.test(password.value)) strength++;
+            if (/\d/.test(password.value)) strength++;
+            if (/[!@#$%^&*(),.?":{}|<>]/.test(password.value)) strength++;
+
+            // 根据强度等级显示提示
+            switch (strength) {
+                case 0:
+                case 1:
+                    strengthMessage.textContent = '弱口令';
+                    strengthMessage.className = 'password-strength weak';
+                    break;
+                case 2:
+                case 3:
+                    strengthMessage.textContent = '一般';
+                    strengthMessage.className = 'password-strength medium';
+                    break;
+                default:
+                    strengthMessage.textContent = '强密码';
+                    strengthMessage.className = 'password-strength strong';
+                    break;
+            }
+
+            // 如果密码符合最低要求，隐藏提示
+            if (strength == 0) {
+                strengthMessage.style.display = 'none';
+            } else {
+                strengthMessage.style.display = 'inline';
+            }
+        }
+
+        // 封装AJAX请求函数，提高代码复用性和可维护性
+        function sendAjaxRequest(url, data, successCallback, errorCallback) {
+            $.ajax({
+                url: url,
+                type: 'POST',
+                dataType: 'json',
+                contentType: 'application/x-www-form-urlencoded',
+                data: data,
+                success: function (response) {
+                    console.log('请求成功:', response);
+                    if (typeof successCallback === 'function') {
+                        successCallback(response);
+                    }
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+                    console.error('请求失败:', textStatus, errorThrown);
+                    if (typeof errorCallback === 'function') {
+                        errorCallback(jqXHR, textStatus, errorThrown);
+                    } else {
+                        alert('请求失败，请检查网络连接。' + (errorThrown ? ' 错误信息：' + errorThrown : ''));
+                    }
+                }
+            });
+        }
+
+        // 封装布局调整函数
+        function adjustLayout() {
+            console.log('Layout adjusted.');
+        }
+
+        function debounceAdjustLayout() {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(adjustLayout, 100);
+        }
+
+        $(document).ready(function () {
+            $('#loginSubmit').on('click', function (e) {
+                e.preventDefault();
+
+                // 示例：发送包含两个键值对的POST请求
+                const data = { key1: 'value1', key2: 'value2' };
+                const url = '资料页面/寄养资料.html';
+
+                sendAjaxRequest(url, data, function (response) {
+                    // 请求成功时的处理逻辑
+                }, function (jqXHR, textStatus, errorThrown) {
+                    // 请求失败时的处理逻辑
+                    alert('请求失败，请检查网络连接。' + (errorThrown ? ' 错误信息：' + errorThrown : ''));
+                });
+            });
+
+            adjustLayout();
+            $(window).on('resize', debounceAdjustLayout);
+        });
+    </script>
+</body>
+
+</html>

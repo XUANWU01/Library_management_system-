@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <link rel="stylesheet" href="../static/CSS/01.css">
+    <link rel="stylesheet" href="../static/CSS/navbar.css">
+    <style>
+        html, body {
+            background-image: url("../static/picture/20240522203201.png");
+            background-color: #149bdf;
+        }
+    </style>
+</head>
+<body>
+
+  {% include "basic/navbar.html" %}
+<div class="login-container">
+    <form id="loginForm" action="/login" method="POST">
+        <div class="login-form">
+            <h1>欢迎使用XX系统</h1>
+            <a href="/register">注册</a>
+            <a href="/login">登录</a>
+            <a href="/show">显示用户</a>
+            <a href="/upload_file">文件上传</a>
+        </div>
+    </form>
+</div>
+      {% include "basic/foot.html" %}
+
+</body>
+</html>

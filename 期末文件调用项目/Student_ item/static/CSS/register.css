@@ -1,0 +1,140 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            height: 100vh;
+            background: url("https://images.pexels.com/photos/290595/pexels-photo-290595.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1") no-repeat;
+            background-size: cover;
+        }
+
+
+        .Box {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 650px;
+            height: 400px;
+            display: flex;
+        }
+
+        .left {
+            position: relative;
+            width: 45%;
+            height: 100%;
+            background: url("https://img0.baidu.com/it/u=4234357226,4114415663&fm=253&fmt=auto&app=138&f=PNG?w=900&h=462") no-repeat;
+            background-size: cover;
+        }
+
+        .right {
+            position: relative;
+            width: 55%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 1);
+        }
+
+        .centerBox {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+        }
+
+        .left img {
+            width: 50px;
+            height: 50px;
+            margin-bottom: 5px;
+        }
+
+        .left p {
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .left h4 {
+            font-size: 18px;
+            color: #fff;
+            margin-bottom: 10px;
+        }
+
+        .right form {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 80%;
+            text-align: center;
+        }
+
+        h3 {
+            margin-bottom: 20px;
+            color: #5f89ca;
+        }
+
+        input {
+            width: 100%;
+            height: 30px;
+            border: 1px solid #5f89ca;
+            background-color: transparent;
+            padding-left: 10px;
+            font-size: 12px;
+            color: #000000;
+            margin-bottom: 15px;
+            outline: none;
+        }
+
+        .loginBtn {
+            width: 100%;
+            height: 35px;
+            line-height: 32px;
+            text-align: center;
+            font-size: 15px;
+            color: #fff;
+            background: #5f89ca;
+            outline: none;
+            border: none;
+            margin-top: 10px;
+        }
+
+        .loginBtn:hover {
+            cursor: pointer;
+            background-color: deepskyblue;
+        }
+
+        .no {
+            cursor: pointer;
+            margin-top: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: #828282;
+        }
+
+        .yzmBox {
+            display: flex;
+            justify-content: flex-start;
+        }
+
+        .yzmBox input {
+            width: 70%;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .yzmBox .btn {
+            cursor: pointer;
+            width: 29%;
+            background-color: #5f89ca;
+            color: #ffffff;
+            height: 30px;
+            outline: none;
+            border: 1px solid #5f89ca;
+            font-size: 12px;
+            margin-left: 1%;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+        }

@@ -1,0 +1,18 @@
+<div>
+    {% with messages = get_flashed_messages(with_categories=true) %}
+        {# 获取带有类别信息的flashed消息。flashed消息是一种临时存储的信息，通常用于显示通知或错误信息。with语句在这里用于创建一个局部变量'messages'，它包含了所有被'flash'函数记录的消息。with_categories参数设置为true，意味着消息会被分类。#}
+
+        {% if messages %}
+            {# 检查'messages'变量是否包含任何消息。如果有的话，执行循环。#}
+            {% for category, mess in messages %}
+                {# 遍历'messages'列表，每个元素都是一个元组，包含类别(category)和消息(mess)。#}
+                <div class="alert alert-{{ category }} text-center">
+                    {# 使用类别作为Bootstrap的警告类（例如：'alert-info', 'alert-warning', 'alert-danger'等）。这将决定警告框的样式。#}
+                    {{ mess }}
+                    {# 显示消息内容。#}
+                </div>
+            {% endfor %}
+        {% endif %}
+    {% endwith %}
+    {# 结束with语句，'messages'变量仅在此范围内有效。#}
+</div>

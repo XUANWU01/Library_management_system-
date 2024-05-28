@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>宠物寄养信息表单</title>
+    <link rel="stylesheet" href="美化.css">
+</head>
+
+<body>
+    <div class="pet-registration">
+    <header>
+        <h1>宠物寄养信息表单</h1>
+    </header>
+
+    <main>
+        <form id="petForm" action="process_form.php" method="post" enctype="multipart/form-data">
+
+            <section>
+                <h2>宠物基本信息</h2>
+
+                <label for="petName">宠物名称：</label>
+                <input type="text" id="petName" name="petName" required><br>
+
+                <label for="breed">品种：</label>
+                <input type="text" id="breed" name="breed" required><br>
+
+                <label for="age">年龄：</label>
+                <input type="text" id="age" name="age" required><br>
+
+                <label for="gender">性别：</label>
+                <select id="gender" name="gender" required>
+                    <option value="雄">雄</option>
+                    <option value="雌">雌</option>
+                </select><br>
+
+                <label for="weight">体重：</label>
+                <input type="text" id="weight" name="weight" required><br>
+
+                <label for="color">宠物颜色：</label>
+                <input type="text" id="color" name="color" required><br>
+
+                <label for="isSterilized">是否已绝育：</label>
+                <select id="isSterilized" name="isSterilized" required>
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select><br>
+
+                <label for="healthStatus">健康状况：</label>
+                <select id="healthStatus" name="healthStatus" required>
+                    <option value="健康">健康</option>
+                    <option value="不健康">不健康</option>
+                    <script>
+                        function checkHealthStatus() {
+                            var healthStatus = document.getElementById("healthStatus").value;
+                            if (healthStatus === "不健康") {
+                                document.getElementById("healthIssues").style.display = "block";
+                            } else {
+                                document.getElementById("healthIssues").style.display = "none";
+                            }
+                        }
+                    </script>
+                </select><br>
+            </section>
+
+            <section>
+                <h2>主人信息</h2>
+
+                <label for="ownerName">姓名：</label>
+                <input type="text" id="ownerName" name="ownerName" required><br>
+
+                <label for="contact">联系方式：</label>
+                <input type="tel" id="contact" name="contact" pattern="[0-9]{11}" required placeholder="请输入11位手机号码"><br>
+
+                <label for="address">地址：</label>
+                <input type="text" id="address" name="address" required><br>
+
+                <label for="emergencyName">紧急联系人姓名：</label>
+                <input type="text" id="emergencyName" name="emergencyName" required><br>
+
+                <label for="emergencyContact">紧急联系人联系方式：</label>
+                <input type="tel" id="emergencyContact" name="emergencyContact" pattern="[0-9]{11}" required
+                    placeholder="请输入11位手机号码"><br>
+            </section>
+
+            <section>
+                <h2>寄养期间注意事项</h2>
+
+                <label for="startDate">寄养开始日期：</label>
+                <input type="date" id="startDate" name="startDate" required><br>
+
+                <label for="endDate">寄养结束日期：</label>
+                <input type="date" id="endDate" name="endDate" required><br>
+
+                <label for="diet">宠物饮食习惯：</label>
+                <textarea id="diet" name="diet" required></textarea><br>
+
+                <label for="activity">宠物日常活动习惯：</label>
+                <textarea id="activity" name="activity" required></textarea><br>
+
+                <label for="acceptOtherPets">宠物是否接受其他宠物：</label>
+                <select id="acceptOtherPets" name="acceptOtherPets" required>
+                    <option value="是">是</option>
+                    <option value="否">否</option>
+                </select><br>
+
+                <label for="specialRequirements">宠物禁忌/特殊要求：</label>
+                <textarea id="specialRequirements" name="specialRequirements" required></textarea><br>
+            </section>
+
+            <button id="confirmButton" type="button">提交</button>
+        </form>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-content">
+                <h1 class="logo-text"><span>Pet</span>Home</h1>
+                <p>
+                    PetHome是一个专为宠物爱好者打造的社区，你可以在这里分享宠物故事、交流宠物知识，并找到志同道合的朋友。
+                </p>
+                <div class="links">
+                    <a href="about_us.html">关于我们</a>
+                    <a href="#">隐私政策</a>
+                    <a href="#">联系我们</a>
+                    <a href="#">帮助中心</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const form = document.getElementById('petForm');
+            const confirmButton = document.getElementById('confirmButton');
+
+            // 优化1: 提交按钮点击事件
+            confirmButton.addEventListener('click', async (event) => {
+                event.preventDefault();
+                confirmButton.disabled = true;
+
+                try {
+                    // 优化2: 添加CSRF令牌
+                    const csrfToken = getCsrfToken();
+                    const formData = new FormData(form);
+                    formData.append('_csrf', csrfToken);
+
+                    const response = await fetch(form.action, {
+                        method: form.method,
+                        body: formData,
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('服务器响应错误');
+                    }
+
+                    const data = await response.json();
+                    console.log(data);
+                    alert('数据已成功提交！');
+                    form.reset();
+                    confirmButton.disabled = false;
+                } catch (error) {
+                    console.error(error);
+                    alert('提交失败，请稍后再试。');
+                    confirmButton.disabled = false;
+                }
+
+                // 优化3: 验证表单示例 - 电话号码格式校验
+                function validatePhoneNumber(phoneInput) {
+                    const phone = phoneInput.value;
+                    const phonePattern = /^1\d{10}$/;
+                    if (!phonePattern.test(phone)) {
+                        alert('请填写有效的电话号码！');
+                        return false;
+                    }
+                    return true;
+                }
+            });
+
+            // 优化4: 假设getCsrfToken从服务器获取
+            function getCsrfToken() {
+                // 实际开发中，此处应通过接口从服务器获取
+                return 'fake-csrf-token';
+            }
+        });
+    </script>
+</body>
+
+</html>

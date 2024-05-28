@@ -1,0 +1,65 @@
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 442-748-328
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5563
+ * Running on http://192.168.1.5:5563
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 442-748-328
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5563
+ * Running on http://192.168.1.5:5563
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 442-748-328
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:30] "GET /login HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/JavaScript/jquery-3.6.0.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/CSS/01.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/picture/Í¼Æ¬1.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/JavaScript/login.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/CSS/navbar.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:54:31] "[36mGET /static/picture/backdrop.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:41] "POST /login HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:41] "[36mGET /static/CSS/01.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:41] "[36mGET /static/CSS/navbar.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:41] "[36mGET /static/picture/Í¼Æ¬1.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:41] "[36mGET /static/picture/20240522203201.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "GET /register HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/CSS/01.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/CSS/navbar.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/picture/Í¼Æ¬1.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/JavaScript/login.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/JavaScript/jquery-3.6.0.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [27/May/2024 17:55:57] "[36mGET /static/picture/20240522203305.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug: * Detected change in 'D:\\ZQDFile\\HTML\\ÆÚÄ©ÎÄ¼þµ÷ÓÃÏîÄ¿\\Student_ item\\flask_student.py', reloading
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 442-748-328
+INFO:werkzeug: * Detected change in 'D:\\ZQDFile\\HTML\\ÆÚÄ©ÎÄ¼þµ÷ÓÃÏîÄ¿\\Student_ item\\flask_student.py', reloading
+INFO:werkzeug: * Restarting with stat
+INFO:werkzeug:[31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5563
+ * Running on http://192.168.1.5:5563
+INFO:werkzeug:[33mPress CTRL+C to quit[0m
+INFO:werkzeug: * Restarting with stat
+WARNING:werkzeug: * Debugger is active!
+INFO:werkzeug: * Debugger PIN: 442-748-328
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "[36mGET /static/CSS/01.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "[36mGET /static/CSS/navbar.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "[36mGET /static/picture/Í¼Æ¬1.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "[36mGET /static/picture/20240522203201.png HTTP/1.1[0m" 304 -
+ERROR:root:404´íÎó£º404 Not Found: The requested URL was not found on the server. If you entered the URL manually please check your spelling and try again.
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:00] "[33mGET /favicon.ico HTTP/1.1[0m" 404 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "GET /upload_file HTTP/1.1" 200 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/CSS/01.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/CSS/upload.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/picture/Í¼Æ¬1.png HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/CSS/navbar.css HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/picture/20240522203117.jpg HTTP/1.1[0m" 304 -
+INFO:werkzeug:192.168.1.5 - - [28/May/2024 12:53:06] "[36mGET /static/JavaScript/jquery-3.6.0.js HTTP/1.1[0m" 304 -

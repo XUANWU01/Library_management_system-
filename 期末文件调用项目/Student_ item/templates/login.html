@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录页面</title>
+    <link rel="stylesheet" href="../static/CSS/01.css">
+    <link rel="stylesheet" href="../static/CSS/navbar.css">
+{#    <link rel="stylesheet" href="../static/CSS/bootstrap2.3.1.min.css">#}
+    <script src="../static/JavaScript/jquery-3.6.0.js" async defer></script>
+    <style>
+        html, body {
+            background-image: url("../static/picture/backdrop.jpg");
+        }
+    </style>
+</head>
+
+<body>
+
+  {# 模板继承 #}
+  {% include "basic/navbar.html" %}
+  {% include "basic/message.html" %}
+    <div class="login-container">
+        <form id="loginForm" action="/login" method="POST">
+            <div class="login-form">
+                <div class="form-group">
+                    <label for="student_number">学&nbsp;号:</label>
+                    <input type="text" id="student_number" name="student_number" placeholder="请输入学号" required pattern="[0-9]{5,10}">
+                </div>
+                <div class="form-group">
+                    <label for="account">姓&nbsp;名:</label>
+                    <input type="text" id="account" name="account" placeholder="请输入姓名" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">密&nbsp;码:</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required oninput="checkPasswordStrength()">
+                    <span id="passwordStrength" class="password-strength"></span>
+                </div>
+                <input type="submit" value="登录" id="loginSubmit">
+                <a href="/register" style="text-decoration: underline;cursor: pointer;color:#1b1b1b">
+                没有账号？<span>去注册</span>
+                </a>
+            </div>
+        </form>
+    </div>
+      {% include "basic/foot.html" %}
+
+
+    <script src="../static/JavaScript/login.js"></script>
+</body>
+
+</html>

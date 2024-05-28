@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .flow-button {
+            position: relative;
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .flow-button:before,
+        .flow-button:after {
+            content: "";
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            top: -50%;
+            left: -50%;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            transition: all 0.5s ease;
+            opacity: 0;
+        }
+
+        .flow-button:before {
+            border-color: transparent transparent transparent #fff;
+            transform: rotate(45deg);
+        }
+
+        .flow-button:after {
+            border-color: transparent transparent #fff transparent;
+            transform: rotate(-45deg);
+        }
+
+        .flow-button:hover {
+            background-color: #2980b9;
+        }
+
+        .flow-button:hover:before,
+        .flow-button:hover:after {
+            opacity: 1;
+            transform: rotate(0deg);
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="flow-button">Hover Me</button>
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            font-family: Arial, sans-serif;
+            background-color: aliceblue;
+            /* background-image: url('background.jpg'); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .pet-registration {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 2rem;
+            /* 修改为适合内容的内边距 */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        /* 标题样式 */
+        h1,
+        h2 {
+            color: #4319ce;
+            text-align: center;
+        }
+
+        /* 表单容器样式 */
+        .container {
+            max-width: 80%;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        /* 表单元素样式 */
+        form label {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        form input[type="text"],
+        form textarea,
+        form input[type="date"],
+        form select {
+            width: 100%;
+            padding: 0.5rem;
+            border: 1px solid #2682de;
+            border-radius: 0.25rem;
+            box-sizing: border-box;
+        }
+
+        form textarea {
+            resize: vertical;
+        }
+
+        /* 复选框样式 */
+        form input[type="checkbox"] {
+            display: flex;
+            align-items: center;
+            margin-right: 0.5rem;
+        }
+
+        /* 提交按钮样式 */
+        button#confirmButton {
+            width: 100%;
+            padding: 1rem;
+            background-color: #007bff;
+            border: none;
+            border-radius: 0.25rem;
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease-in-out;
+        }
+
+        button#confirmButton:hover {
+            background-color: #0056b3;
+        }
+
+        /* 提示信息样式 */
+        .alert {
+            margin-top: 1rem;
+        }

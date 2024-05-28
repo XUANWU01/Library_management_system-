@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>登录注册</title>
+    <!--引入css和图标图的css 引入才可以生效-->
+    <link rel="stylesheet" href="./ascets.css">
+    <link rel="stylesheet" href="./ascets./iconfont/iconfont.css">
+    <link rel="stylesheet" href="Untitled-2.css">
+</head>
+
+<body>
+    <div class="container" id="container">
+        <div class="form-container sign-up-container ">
+            <!--注册-->
+            <form action="#">
+                <h1>新用户注册</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="iconfont icon-qq"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-weixin"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-weibo-copy"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-github"></i></a>
+                </div>
+                <span>您可以选择以上几种方式注册一个您的账号</span>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <input type="password" placeholder="再次输入密码">
+                <input type="email" placeholder="电话">
+                <button id="send_code">发送验证码</button>
+                <input type="email" placeholder="验证码">
+                <button>注册</button>
+                <span>已有账号?<button>去登录</button></span>
+            </form>
+        </div>
+        <div class="form-container sign-in-container">
+            <!--登录-->
+            <form action="#">
+                <h1>用户登录</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="iconfont icon-qq"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-weixin"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-weibo-copy"></i></a>
+                    <a href="#" class="social"><i class="iconfont icon-github"></i></a>
+                </div>
+                <span>您可以选择以上几种方式登录一个您的账号！</span>
+                <input type="text" placeholder="用户名">
+                <input type="password" placeholder="密码">
+                <a href="#">忘记密码</a>
+                <button>登录</button>
+            </form>
+        </div>
+        <!--侧边栏内容-->
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panner overlay-left">
+                    <h1>已有账号?</h1>
+                    <p>快点点我去进行登录吧</p>
+                    <button class="ghost" id="siginIn">登录</button>
+
+                </div>
+                <div class="overlay-panner overlay-right">
+                    <h1>没有账号?</h1>
+                    <p>快点点我去注册一个新的账号吧</p>
+                    <button class="ghost" id="siginUp">注册</button>
+
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+    </div>
+</body>
+<script src="index.js"></script>
+
+</html>
